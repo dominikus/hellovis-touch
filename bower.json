@@ -1,0 +1,26 @@
+{
+  "name": "hellovis-touch",
+  "version": "0.1.0",
+  "authors": [
+    "Dominikus Baur <do@minik.us>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "d3": "~3.4.1",
+    "jquery": "1.9.1"
+  },
+  "overrides": {
+    "jquery": {
+      "main": "jquery.min.js"
+    }
+  }
+}

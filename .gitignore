@@ -1,1 +1,15 @@
 ._*
+*sass-cache
+/www/coffee/main.js
+/www/js/main.js
+/www/deployed/*
+
+/www/codekit-config.json
+node_modules/
+bower_components/
+dev/
+dist/
+t4/
+*.sublime-workspace
+*.sublime-project
+
