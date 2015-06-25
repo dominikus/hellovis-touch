@@ -98,7 +98,7 @@ gulp.task 'sass', ->
 		]
 	.on "error", notify.onError "Error: <%= error.message %>"
 	.pipe connect.reload()
-	.pipe gulp.dest config.target + '/css'
+	.pipe gulp.dest config.target + '/styles'
 
 
 gulp.task 'copy', ->
@@ -150,12 +150,15 @@ gulp.task 'clean', (cb) ->
 	del [ config.target ], cb
 
 gulp.task 'initial-build', ['clean'], (cb) ->
-	if config.mode == 'dist'
-		sequence('copy', 'coffee', ['includereplace', 'sass', 'bower'], cb)
-	else
-		sequence('copy', ['includereplace', 'coffee', 'sass', 'bower'], cb)
+	sequence('copy', ['includereplace', 'coffee', 'sass', 'bower'], cb)
 
-gulp.task 'watch', ['initial-build'], ->
+gulp.task 'connect', ['initial-build'], ->
+	return connect.server
+		root: config.target + '/'
+		port: 8000
+		livereload: true
+
+gulp.task 'watch', ['connect'], ->
 	gulp.watch 'bower_components/**', ['bower']
 	gulp.watch 'src/coffee/**', ['coffee']
 	gulp.watch 'src/sass/**', ['sass']
