@@ -14,9 +14,9 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": "~1.6.0",
-    "d3": "~3.4.1",
-    "jquery": "1.9.1"
+    "underscore": "latest",
+    "d3": "latest",
+    "jquery": "latest"
   },
   "overrides": {
     "jquery": {
